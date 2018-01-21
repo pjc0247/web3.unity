@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Metamask : MonoBehaviour
+public class Web3 : MonoBehaviour
 {
     #region IMPORT
     [DllImport("__Internal")]
@@ -15,9 +15,12 @@ public class Metamask : MonoBehaviour
     private static extern string w3u_getAccount(int idx);
     [DllImport("__Internal")]
     private static extern string w3u_getFirstAccount();
+
+    [DllImport("__Internal")]
+    private static extern long w3u_getBlockNumber();
+
     [DllImport("__Internal")]
     private static extern bool w3u_sendFund(string address, double value);
-
     [DllImport("__Internal")]
     private static extern double w3u_getBalance(string address);
     #endregion // IMPORT
