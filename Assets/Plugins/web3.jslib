@@ -27,6 +27,10 @@ mergeInto(LibraryManager.library, {
         return str2unityStr(web3.eth.accounts[idx]);
     },
 
+    w3u_getBlockNumber: function() {
+        return web3.eth.blockNumber;
+    },
+
     w3u_sendFund: function(receiver, value){
         var sender = web3.eth.accounts[0];
         var receiver = Pointer_stringify(receiver);
@@ -42,4 +46,3 @@ mergeInto(LibraryManager.library, {
         return web3.eth.getBalance(Pointer_stringify(address));
     }
 });
-
